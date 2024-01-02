@@ -9,8 +9,6 @@ function adicionarContato() {
 
     let tabela = document.getElementById("tabelaContatos");
     let linhasExistentes = tabela.getElementsByTagName("tr");
-
-    // Verifica se o nome já existe na tabela
     let nomeExiste = Array.from(linhasExistentes).some(row => row.cells[0]?.innerHTML === nome);
 
     if (nomeExiste) {
@@ -27,3 +25,28 @@ function adicionarContato() {
 
     document.getElementById("formContato").reset();
 }
+
+
+function validarFormulario() {
+    let telefone = document.getElementById('telefone').value.replace(/\D/g, '');
+
+    if (telefone.length < 11 || telefone.length > 13) { // Exemplo para prefixos de 2 a 4 dígitos
+        alert('Por favor, insira um número de telefone válido com prefixo.');
+        return false;
+    }
+
+    adicionarContato();
+    return false; // Isso previne o comportamento padrão do formulário
+}
+
+// Resto das suas funções aqui (validarNome, formatarTelefone)
+function validarNome(input) {
+    input.value = input.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛãõÃÕçÇ\s]/g, '');
+}
+
+function validarTelefone(input) {
+    let maxDigits = 13; // Ajuste conforme necessário
+    input.value = input.value.replace(/[^0-9]/g, '').substring(0, maxDigits);
+}
+
+

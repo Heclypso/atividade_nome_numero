@@ -2,18 +2,16 @@
 <html>
 <head>
     <title>Contatos</title>
-</head>
     <link rel="stylesheet" type="text/css" href="./main.css">
+</head>
 <body>
     <h2>Cadastrar Contato</h2>
 
-    <form id="formContato">
-        <input type="text" id="nome" placeholder="Insira o nome" name="nome" required>
-        <br>
-        <input type="text" id="telefone" placeholder="Insira o telefone" name="telefone" required>
+    <form id="formContato" onsubmit="return validarFormulario()">
+        <input type="text" id="nome" placeholder="Insira o nome" name="nome" oninput="validarNome(this)" required>
+        <input type="text" id="telefone" placeholder="Insira o telefone" name="telefone" oninput="validarTelefone(this)" required>     
         <br><br>
-        <input id="cadastrar" type="button" value="Cadastrar" onclick="adicionarContato()">
-        
+        <input id="cadastrar" type="submit" value="Cadastrar">
     </form>
 
     <h2>Contatos</h2>
@@ -23,6 +21,6 @@
             <th>Telefone</th>
         </tr>
     </table>
-        <script src="./main.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
