@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contatos</title>
+</head>
+    <link rel="stylesheet" type="text/css" href="./main.css">
+<body>
+    <h2>Cadastrar Contato</h2>
+
+    <form id="formContato">
+        <input type="text" id="nome" placeholder="Insira o nome" name="nome" required>
+        <br>
+        <input type="text" id="telefone" placeholder="Insira o telefone" name="telefone" required>
+        <br><br>
+        <input id="cadastrar" type="button" value="Cadastrar" onclick="adicionarContato()">
+        
+    </form>
+
+    <h2>Contatos</h2>
+    <table id="tabelaContatos" border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+        </tr>
+    </table>
+        <script src="./main.js"></script>
+</body>
+</html>
